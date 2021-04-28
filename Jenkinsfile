@@ -1,6 +1,6 @@
 node{
     stage('pulling code from github'){
-        git credentialsId: 'github', url: 'https://github.com/rameshcompany/war-1-wm-1.git'
+       git checkout
     }
     stage('building with maven'){
         sh 'mvn clean install'
