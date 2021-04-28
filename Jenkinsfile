@@ -1,6 +1,6 @@
 node{
     stage('pulling code from github'){
-       git checkout
+       echo"git checkout"
     }
     stage('building with maven'){
         sh 'mvn clean install'
