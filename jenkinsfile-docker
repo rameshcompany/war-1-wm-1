@@ -1,0 +1,25 @@
+pipeline{
+    //agent{
+      //  label 'tom'
+    //}
+    agent{
+        docker{
+            image 'maven:alpine-test'
+            label 'dockernode'
+        }
+    }
+    stages{
+        stage('checkout'){
+            steps{
+                checkout scm
+                //git credentialsId: 'pipeline', url: 'https://github.com/rameshcompany/war-1-wm-1.git'
+            }
+            
+        }
+        stage('build'){
+            steps{
+                sh "mvn clean install"
+            }
+        }
+    }
+}
