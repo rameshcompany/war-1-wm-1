@@ -3,10 +3,10 @@ pipeline{
       //  label 'dockernode'
     //}
     agent{
-          
+          docker{
             image 'maven:alpine-test'
             label 'dockernode'
-        
+        }
     }
     stages{
         stage('checkout'){
